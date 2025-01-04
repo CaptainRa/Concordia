@@ -28,12 +28,20 @@
     "dependencies": {
         "@generouted/react-router": "^1.19.9",
         "@motionone/utils": "^10.18.0",
+        "@radix-ui/react-slot": "^1.1.1",
         "@react-oauth/google": "^0.12.1",
         "@react-three/fiber": "^8.17.10",
+        "@splidejs/react-splide": "^0.7.12",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
         "framer-motion": "^11.15.0",
+        "lucide-react": "^0.469.0",
         "motion": "^11.15.0",
         "popmotion": "^11.0.5",
+        "react-icons": "^5.4.0",
         "react-router-dom": "^7.1.1",
+        "tailwind-merge": "^2.6.0",
+        "tailwindcss-animate": "^1.0.7",
         "three": "^0.172.0"
     }
 }
