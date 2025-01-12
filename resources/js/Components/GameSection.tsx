@@ -32,10 +32,10 @@ const GameSection = () => {
     }
 
     return (
-        <motion.div ref={ref} className="flex gap-8 w-full min-h-screen flex-row items-center justify-start py-4 bg-dark-bg" id='game-section'>
+        <motion.div ref={ref} className="flex gap-8 w-full min-h-screen flex-row items-center justify-start py-20 bg-dark-bg" id='game-section'>
             <div className='w-3/4 h-full flex flex-col items-start justify-center'>
                 <motion.h1
-                    className="text-dark-accent text-4xl font-semibold px-12 w-full "
+                    className="text-dark-accent text-4xl font-semibold px-12 w-full  "
                     initial={{ opacity: 0, y: -200 }}
                     animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -200 }}
                     transition={{ duration: 0.9, ease: [0.17, 0.55, 0.55, 1], delay: 0.05 }}
