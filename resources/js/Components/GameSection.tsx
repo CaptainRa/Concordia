@@ -28,12 +28,12 @@ const GameSection = () => {
   
     const rows = [];
     for (let i = 0; i < games.length; i += 3) {
-        rows.push(games.slice(i, i + 3));
+        rows.push(games.slice(i, i + 4));
     }
-    
+
     return (
-        <motion.div ref={ref} className="flex gap-8 w-full min-h-screen flex-row items-center justify-start py-4 bg-dark-bg">
-            <div className='w-full h-full flex flex-col items-start justify-center'>
+        <motion.div ref={ref} className="flex gap-8 w-full min-h-screen flex-row items-center justify-start py-4 bg-dark-bg" id='game-section'>
+            <div className='w-3/4 h-full flex flex-col items-start justify-center'>
                 <motion.h1
                     className="text-dark-accent text-4xl font-semibold px-12 w-full "
                     initial={{ opacity: 0, y: -200 }}
@@ -90,7 +90,7 @@ const GameSection = () => {
                     ))}
                 </div>
             </div>
-            <div className='w-full h-full flex items-center justify-center'>
+            <div className='w-1/4 h-full flex items-center justify-center'>
                 Heloo Jawa
             </div>
            
