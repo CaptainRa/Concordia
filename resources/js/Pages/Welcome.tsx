@@ -2,12 +2,14 @@ import React from "react";
 import Navbar from "@/Components/Navbar";
 import Banner from "@/Components/Banner";
 import GameSection from "@/Components/GameSection";
+import Profile from "@/Components/Profile";
 
 const Welcome = () => {
     return (
         <div className="flex bg-dark-bg w-full min-h-screen flex-col items-center justify-start overflow-x-hidden scrollbar-y-hidden overflow-y-auto z-10">
             <Navbar />
             <Banner />
+            <Profile />
             <GameSection />
             <div className="flex w-full h-screen flex-col items-center justify-center bg-gray-300">
                 <h2 className="text-3xl font-bold mb-4">Another Section</h2>
