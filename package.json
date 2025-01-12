@@ -29,6 +29,7 @@
     "dependencies": {
         "@generouted/react-router": "^1.19.9",
         "@motionone/utils": "^10.18.0",
+        "@radix-ui/react-avatar": "^1.1.2",
         "@radix-ui/react-slot": "^1.1.1",
         "@react-oauth/google": "^0.12.1",
         "@react-three/fiber": "^8.17.10",
