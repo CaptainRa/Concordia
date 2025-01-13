@@ -10,8 +10,8 @@ const Welcome = () => {
         <div className="flex bg-dark-bg w-full min-h-screen flex-col items-center justify-start overflow-x-hidden scrollbar-y-hidden overflow-y-auto z-10">
             <Navbar />
             <Banner />
-            <Profile />
             <GameSection />
+            <Profile />
             <div className="flex w-full h-screen flex-col items-center justify-center bg-gray-300">
                 <h2 className="text-3xl font-bold mb-4">Another Section</h2>
                 <p className="text-lg mb-4">This is another section below the game section. Add more content here.</p>
