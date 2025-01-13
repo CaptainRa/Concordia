@@ -19,6 +19,7 @@ const Banner = () => {
     return (
         <div 
         className="relative flex w-full flex-col min-h-screen items-center justify-center text-center z-5"
+        id='hero-section'
         ref={ref}
         >
             
