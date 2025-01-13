@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { FaStar } from "react-icons/fa";
 import Typewriter from './TypeWritter';
+import CenteredCarousel from './CenteredCarousel';
 
 
 const GameSection = () => {
@@ -53,7 +54,7 @@ const GameSection = () => {
                 >
                     Engage your mind with an array of interactive challenges designed to test strategy, logic, and creativity. Immerse yourself in timeless puzzles that entertain, educate, and inspire mental sharpness.
                 </motion.p>
-                <div className='w-full flex flex-col items-center justify-center gap-12 px-12 mt-12'>
+                {/* <div className='w-full flex flex-col items-center justify-center gap-12 px-12 mt-12'>
                     {rows.map((row, rowIndex) => (
                         <div key={rowIndex} className='flex w-full items-start justify-start gap-12'>
                             {row.map((game, index) => (
@@ -88,7 +89,8 @@ const GameSection = () => {
                             ))}
                         </div>
                     ))}
-                </div>
+                </div> */}
+                <CenteredCarousel   />
             </div>
             <div className='w-1/4 h-full flex items-center justify-center'>
                 Heloo Jawa
