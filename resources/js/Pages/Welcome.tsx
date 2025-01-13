@@ -3,6 +3,7 @@ import Navbar from "@/Components/Navbar";
 import Banner from "@/Components/Banner";
 import GameSection from "@/Components/GameSection";
 import Profile from "@/Components/Profile";
+import Footer from "@/Components/Footer";
 
 const Welcome = () => {
     return (
@@ -17,6 +18,7 @@ const Welcome = () => {
                 <p className="text-lg mb-4">Scroll down to see more content.</p>
                 <p className="text-lg mb-4">You can add more sections as needed.</p>
             </div>
+            <Footer />
         </div>
     );
 };
