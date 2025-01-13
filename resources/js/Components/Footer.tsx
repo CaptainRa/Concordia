@@ -57,7 +57,7 @@ export default function Footer() {
                 <h1 className="text-md font-light mt-4"> 
                     Get in touch with us
                 </h1>
-                <form className="relative flex flex-row w-full items-center justify-center mt-2">
+                <form className="relative flex flex-row w-full items-center justify-center">
                     <input type="text" placeholder="Email" className=" w-full h-8 rounded-md ">
                        
                     </input>
