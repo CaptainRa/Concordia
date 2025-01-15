@@ -34,7 +34,7 @@ const GameSection = () => {
 
     return (
         <motion.div ref={ref} className="flex gap-8 w-full min-h-screen flex-row items-center justify-start py-20 bg-dark-bg" id='game-section'>
-            <div className='w-3/4 h-full flex flex-col items-start justify-center'>
+            <div className='w-2/4 h-full flex flex-col items-start justify-center'>
                 <motion.h1
                     className="text-dark-accent text-4xl font-semibold px-12 w-full  "
                     initial={{ opacity: 0, y: -200 }}
@@ -92,7 +92,7 @@ const GameSection = () => {
                 </div> */}
                 <CenteredCarousel   />
             </div>
-            <div className='w-1/4 h-full flex items-center justify-center'>
+            <div className='w-2/4 h-full flex items-center justify-center'>
                 Heloo Jawa
             </div>
            
