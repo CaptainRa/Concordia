@@ -12,31 +12,40 @@ const CenteredCarousel = () => {
         { name: 'Memory Game', image: 'images/Image Vector.png' }
     ];
 
+   
     return (
+        
         <Splide
             options={{
                 type: 'loop',
                 perPage: 3,
                 focus: 'center',
-                gap: '1rem',
-                autoplay: true,
-                interval: 3000,
-                breakpoints: {
-                    640: {
-                        perPage: 1,
-                    },
-                    1024: {
-                        perPage: 3,
-                    },
+                gap: '12px',
+                height: '220px',
+                width: '100%',
+                
+                padding: {
+                    left: '12px',
+                  
                 },
+              
+                interval: 3000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+              
+               
+              
+                
+                
+              
             }}
             aria-label="Game Carousel"
         >
             {games.map((game, index) => (
                 <SplideSlide key={index}>
-                    <div className="flex flex-col items-center justify-center p-4 bg-dark-fg rounded-2xl">
+                    <div className="w-[165px] h-[220px] flex flex-col items-center justify-center px-12 bg-dark-accent rounded-2xl">
                         <div
-                            className="w-[165px] h-[220px] bg-cover bg-center rounded-t-2xl"
+                            className="h-48 bg-cover bg-center rounded-t-2xl"
                             style={{ backgroundImage: `url(${game.image})` }}
                         />
                         <h2 className="text-dark-bg text-xl font-semibold mt-4">{game.name}</h2>
