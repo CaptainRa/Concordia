@@ -19,7 +19,9 @@ const Welcome = () => {
                 <p className="text-lg mb-4">This is another section below the game section. Add more content here.</p>
                 <p className="text-lg mb-4">Scroll down to see more content.</p>
                 <p className="text-lg mb-4">You can add more sections as needed.</p>
+                <p className="text-lg mb-4">This is a placeholder section.</p>
             </div>
+
             <Footer />
         </div>
     );
