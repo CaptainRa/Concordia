@@ -14,14 +14,14 @@ const CenteredCarousel = () => {
     ];
 
     return (
-        <div className="w-5/6 px-12 h-full py-12 flex flex-col"> 
+        <div className="w-5/6 px-12 py-8 flex flex-col"> {/* Adjusted padding to create space */}
             <Splide
                 options={{
                     type: 'loop',
                     perPage: 3,
                     focus: 'center',
                     gap: '4px',
-                    height: '300px',
+                    height: '340px', // Adjusted height to create space
                     interval: 3000,
                     pauseOnHover: true,
                     pauseOnFocus: true,
