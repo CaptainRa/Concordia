@@ -27,7 +27,7 @@ const SpotifyPlayerComponent: React.FC = () => {
       const data = await getTracks(token);
       setTracks(data.items || []);
     } catch (error) {
-      if (error.response?.status === 401 && storedRefreshToken) {
+      if (error instanceof Error && (error as any).response?.status === 401 && storedRefreshToken) {
         const newTokenData = await refreshToken(storedRefreshToken);
         setToken(newTokenData.access_token);
         localStorage.setItem('spotify_access_token', newTokenData.access_token);
