@@ -1,17 +1,17 @@
 .splide__arrow {
-    margin: 0 20px; 
+    margin: 0 20px;
 }
 
 .splide__arrow--prev {
-    left: -60px; 
+    left: -60px;
 }
 
 .splide__arrow--next {
-    right: -35px; 
+    right: -60px;
 }
 
 .splide__slide {
-    margin: 8px; 
+    margin: 8px;
 }
 
 .carousel-card {
@@ -21,8 +21,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.carousel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 216, 44, 0.5);
+}
+
+.carousel-card:nth-child(3) {
+    pointer-events: none;
 }
 
 .carousel-card-image {
@@ -39,6 +49,12 @@
 }
 
 .splide__slide.is-active .carousel-card {
-    transform: scale(1.1); 
-    box-shadow: 0 0 20px rgba(255, 216, 44, 0.5); 
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 216, 44, 0.5);
+}
+
+.carousel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 216, 44, 0.5);
+    cursor: pointer;
 }

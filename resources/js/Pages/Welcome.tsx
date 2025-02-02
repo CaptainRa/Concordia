@@ -5,6 +5,8 @@ import GameSection from "@/Components/GameSection";
 import Profile from "@/Components/Profile";
 import Footer from "@/Components/Footer";
 import Scheduling from "@/Components/Scheduling";
+import SpotifyPlayer from "@/Components/Spotify";
+import SpotifyPlayerComponent from "@/Components/SpotifyPlayer";
 
 const Welcome = () => {
     return (
@@ -14,6 +16,8 @@ const Welcome = () => {
             <GameSection />
             <Scheduling />
             <Profile />
+            <SpotifyPlayer />
+            <SpotifyPlayerComponent />
             <div className="flex w-full h-screen flex-col items-center justify-center bg-gray-300">
                 <h2 className="text-3xl font-bold mb-4">Another Section</h2>
                 <p className="text-lg mb-4">This is another section below the game section. Add more content here.</p>

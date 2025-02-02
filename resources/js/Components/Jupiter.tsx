@@ -1,11 +1,11 @@
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import "./Styles.css";
+import { useThree, useFrame } from "@react-three/fiber";
 import { useRef, useLayoutEffect } from "react";
 import { useTransform, useScroll, useTime } from "framer-motion";
 import { degreesToRadians, progress, mix } from "popmotion";
-import { Mesh } from "three";
+import * as THREE from 'three';
 
-
-const color = "#111111";
+const color = "#bea33b";
 
 const Icosahedron = () => (
   <mesh rotation-x={0.35}>
@@ -15,7 +15,7 @@ const Icosahedron = () => (
 );
 
 const Star = ({ p }: { p: number }) => {
-  const ref = useRef<Mesh>(null);
+  const ref = useRef<THREE.Mesh>(null);
 
   useLayoutEffect(() => {
     const distance = mix(2, 3.5, Math.random());
@@ -26,7 +26,7 @@ const Star = ({ p }: { p: number }) => {
     );
     const xAngle = degreesToRadians(360) * p;
     ref.current!.position.setFromSphericalCoords(distance, yAngle, xAngle);
-  });
+  }, [p]);
 
   return (
     <mesh ref={ref}>
@@ -61,7 +61,7 @@ export default function Scene({ numStars = 100 }) {
 
   const stars = [];
   for (let i = 0; i < numStars; i++) {
-    stars.push(<Star p={progress(0, numStars, i)} />);
+    stars.push(<Star key={i} p={progress(0, numStars, i)} />);
   }
 
   return (
@@ -71,13 +71,3 @@ export default function Scene({ numStars = 100 }) {
     </>
   );
 }
-
-// export default function App() {
-//   return (
-//     <div className="container">
-//       <Canvas gl={{ antialias: false }}>
-//         <Scene />
-//       </Canvas>
-//     </div>
-//   );
-// }

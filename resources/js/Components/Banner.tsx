@@ -25,7 +25,7 @@ const Banner = () => {
             
             <motion.div
                 className="absolute inset-0 w-full h-full flex items-center justify-center bg-center bg-cover z-1"
-                style={{ backgroundImage: "url('images/449061299_2873951776088559_7330006344373102702_n.webp.jpg')", y: backgroundY }}
+                // style={{ backgroundImage: "url('images/449061299_2873951776088559_7330006344373102702_n.webp.jpg')", y: backgroundY }}
             >
                 
             </motion.div>
@@ -41,7 +41,7 @@ const Banner = () => {
             </motion.h1>
             <div
                 className="absolute inset-0 w-full h-full flex items-center justify-center bg-center bg-cover z-7"
-                style={{ backgroundImage: "url('images/Parallaxed.png')" }}
+                // style={{ backgroundImage: "url('images/Parallaxed.png')" }}
             >
               
             </div>

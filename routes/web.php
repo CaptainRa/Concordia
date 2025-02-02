@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SpotifyController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -18,6 +20,11 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/spotify/login', [SpotifyController::class, 'login']);
+Route::get('/callback', [SpotifyController::class, 'callback']);
+Route::get('/spotify/tracks', [SpotifyController::class, 'getTracks']);
+Route::post('/spotify/play', [SpotifyController::class, 'playTrack']);
+Route::post('/spotify/refresh', [SpotifyController::class, 'refreshToken']);
 // Route::get('/profile/{user:username}', [ProfileController::class, 'show'])->name('profile.user');
 
 Route::middleware('auth')->group(function () {

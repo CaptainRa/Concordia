@@ -14,26 +14,26 @@ const CenteredCarousel = () => {
     ];
 
     return (
-        <div className="w-5/6 px-12 py-8 flex flex-col"> {/* Adjusted padding to create space */}
+        <div className="w-5/6 px-12 py-8 flex flex-col"> 
             <Splide
                 options={{
                     type: 'loop',
                     perPage: 3,
                     focus: 'center',
                     gap: '4px',
-                    height: '340px', // Adjusted height to create space
+                    height: '340px', 
                     interval: 3000,
                     pauseOnHover: true,
-                    pauseOnFocus: true,
+                    
                 }}
                 aria-label="Game Carousel"
             >
                 {games.map((game, index) => (
                     <SplideSlide key={index}>
-                        <div className="carousel-card bg-dark-accent rounded-2xl transition-transform duration-300 ease-in-out transform hover:scale-105">
+                        <div className="carousel-card flex-row flex bg-dark-accent rounded-2xl justify-start items-start transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
                             <div
-                                className="carousel-card-image bg-cover bg-center rounded-t-2xl"
-                                style={{ backgroundImage: `url(${game.image})` }}
+                                className="carousel-card-image bg-cover bg-dark-fg  bg-center rounded-t-2xl"
+                                
                             />
                             <h2 className="carousel-card-title text-dark-bg text-xl font-semibold mt-4">{game.name}</h2>
                         </div>
