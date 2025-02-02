@@ -65,7 +65,7 @@ const SpotifyPlayerComponent: React.FC = () => {
       {currentTrack && (
         <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 shadow-lg">
           <SpotifyPlayer
-            token={token}
+            token={token || ''}
             uris={[currentTrack]}
             styles={{
               activeColor: '#1db954',
