@@ -51,7 +51,7 @@ const SpotifyPlayerComponent: React.FC = () => {
       <h1 className="text-3xl font-bold mb-8">My Spotify Tracks</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {tracks.map((track) => (
+        {/* {tracks.map((track) => (
           <div
             key={track.id}
             className="bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer"
@@ -67,7 +67,17 @@ const SpotifyPlayerComponent: React.FC = () => {
               {track.artists.map((artist) => artist.name).join(', ')}
             </p>
           </div>
-        ))}
+        ))} */}
+        <iframe
+  title="Spotify Embed: Recommendation Playlist "
+  src={`https://open.spotify.com/embed/playlist/52R7WKopcydAXeRj5cr3tS?utm_source=generator&theme=0`}
+  width="100%"
+  height="100%"
+  style={{ minHeight: '360px', minWidth: '100vh' }}
+  frameBorder="0"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"
+/>
       </div>
 
       {currentTrack && token && (
