@@ -71,24 +71,6 @@ const SpotifyPlayer = () => {
         </button>
       ) : (
         <div>
-          <h2 className="text-xl font-bold">Your Top Tracks</h2>
-          <ul>
-            {tracks.map((track) => (
-              <li key={track.id} className="flex items-center gap-4">
-                <img src={track.album.images[0].url} alt={track.name} width={50} />
-                <div>
-                  <p>{track.name}</p>
-                  <p className="text-sm text-gray-500">{track.artists[0].name}</p>
-                </div>
-                <button
-                  onClick={() => handlePlay(track.uri)}
-                  className="ml-auto bg-blue-500 text-white p-1 rounded"
-                >
-                  Play
-                </button>
-              </li>
-            ))}
-          </ul>
         </div>
       )}
     </div>

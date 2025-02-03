@@ -21,7 +21,7 @@ class SpotifyController extends Controller
 
     public function login()
     {
-        $scopes = "user-read-playback-state user-modify-playback-state user-read-currently-playing";
+        $scopes = "streaming user-read-email user-read-private user-read-playback-state user-modify-playback-state user-read-currently-playing user-top-read";
         $url = "https://accounts.spotify.com/authorize?client_id={$this->client_id}&response_type=code&redirect_uri={$this->redirect_uri}&scope={$scopes}";
         return response()->json(['url' => $url]);
     }
@@ -79,26 +79,23 @@ class SpotifyController extends Controller
 
     public function getTracks(Request $request)
     {
-        try {
-            $accessToken = $request->bearerToken();
-            if (!$accessToken) {
-                return response()->json(['error' => 'Access token missing'], 400);
-            }
-    
-            $response = Http::withToken($accessToken)->get('https://api.spotify.com/v1/me/top/tracks');
-    
-            if ($response->failed()) {
-                return response()->json([
-                    'error' => 'Failed to fetch tracks',
-                    'spotify_response' => $response->json()
-                ], $response->status());
-            }
-    
-            return response()->json($response->json());
-        } catch (\Exception $e) {
-            \Log::error('Spotify Tracks Error: ' . $e->getMessage());
-            return response()->json(['error' => 'Internal Server Error'], 500);
+        $accessToken = $request->bearerToken();
+        \Log::info('Access Token:', ['token' => $accessToken]); // Log the token
+
+        if (!$accessToken) {
+            return response()->json(['error' => 'Access token missing'], 400);
         }
+
+        $response = Http::withToken($accessToken)->get('https://api.spotify.com/v1/me/top/tracks');
+
+        if ($response->failed()) {
+            return response()->json([
+                'error' => 'Failed to fetch tracks',
+                'spotify_response' => $response->json()
+            ], $response->status());
+        }
+
+        return response()->json($response->json());
     }
 
     public function playTrack(Request $request)

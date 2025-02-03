@@ -22,18 +22,26 @@ const SpotifyPlayerComponent: React.FC = () => {
     }
   }, [token]);
 
+  console.log('token:', token);
+  console.log('storedRefreshToken:', storedRefreshToken);
+
   const fetchTracks = async (token: string) => {
     try {
       const data = await getTracks(token);
       setTracks(data.items || []);
     } catch (error) {
+      console.error('Error fetching tracks:', error);
       if (error instanceof Error && (error as any).response?.status === 401 && storedRefreshToken) {
-        const newTokenData = await refreshToken(storedRefreshToken);
-        setToken(newTokenData.access_token);
-        localStorage.setItem('spotify_access_token', newTokenData.access_token);
-        fetchTracks(newTokenData.access_token);
-      } else {
-        console.error('Error fetching tracks:', error);
+        try {
+          const newTokenData = await refreshToken(storedRefreshToken);
+          setToken(newTokenData.access_token);
+          localStorage.setItem("spotify_access_token", newTokenData.access_token);
+          fetchTracks(newTokenData.access_token);
+        } catch (refreshError) {
+          console.error('Error refreshing token:', refreshError);
+        }
+      } else if (error instanceof Error && (error as any).response?.status === 403) {
+        console.error('Access forbidden. Check your permissions.');
       }
     }
   };
@@ -62,10 +70,10 @@ const SpotifyPlayerComponent: React.FC = () => {
         ))}
       </div>
 
-      {currentTrack && (
+      {currentTrack && token && (
         <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 shadow-lg">
           <SpotifyPlayer
-            token={token || ''}
+            token={token}
             uris={[currentTrack]}
             styles={{
               activeColor: '#1db954',
