@@ -31,10 +31,6 @@
     box-shadow: 0 0 20px rgba(255, 216, 44, 0.5);
 }
 
-.carousel-card:nth-child(3) {
-    pointer-events: none;
-}
-
 .carousel-card-image {
     width: 100%;
     height: 60%;
@@ -51,10 +47,4 @@
 .splide__slide.is-active .carousel-card {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 216, 44, 0.5);
-}
-
-.carousel-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 216, 44, 0.5);
-    cursor: pointer;
 }
