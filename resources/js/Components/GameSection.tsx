@@ -45,7 +45,7 @@ const GameSection = () => {
     return (
         <motion.div
             ref={ref}
-            className="flex gap-8 w-full h-full flex-row items-center justify-start py-20 bg-cover bg-center z-25 overflow-y-auto overflow-x-hidden"
+            className="flex gap-8 w-full h-full flex-row items-center justify-start py-20 bg-cover bg-center bg-red-flare z-25 overflow-y-auto overflow-x-hidden"
             id="game-section"
             style={{ backgroundImage: "url(images/Landscape Vector.jpg)", height: "100vh" }}
         >
@@ -86,42 +86,7 @@ const GameSection = () => {
                     yourself in timeless puzzles that entertain, educate, and
                     inspire mental sharpness.
                 </motion.p>
-                {/* <div className='w-full flex flex-col items-center justify-center gap-12 px-12 mt-12'>
-                    {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className='flex w-full items-start justify-start gap-12'>
-                            {row.map((game, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: -200 }}
-                                    animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -200 }}
-                                    transition={{ duration: 0.9, ease: [0.17, 0.55, 0.55, 1], delay: index * 0.2 }}
-                                    className='flex rounded-2xl bg-dark-fg flex-col gap-4 items-start justify-start w-[165px] h-[220px]'
-                                >
-                                
-                                        <div className='w-full bg-dark-accent rounded-t-2xl h-4/6 flex bg-cover bg-center' style={{ backgroundImage: `url(${game.image})` }} />
-                                        <h2 className='text-dark-bg text-md font-semibold px-2'>{game.name}</h2>
-                                        <div className='flex flex-row w-full px-2'>
-                                            {Array(5)
-                                                .fill("")
-                                                .map((_, i) => (
-                                                    <FaStar
-                                                    className='w-4 h-4'
-                                                    key={i}
-                                                    color={
-                                                        i < game.rating
-                                                        ? "#d3873b"
-                                                        : "#a9a9a9"
-                                                    }
-                                                    />
-                                                ))}
-
-                                        </div>
-                                    
-                                </motion.div>
-                            ))}
-                        </div>
-                    ))}
-                </div> */}
+             
                 <CenteredCarousel />
             </div>
             <div className="w-4/12 h-full flex items-center justify-center">

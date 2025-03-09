@@ -6,11 +6,11 @@ import { Link } from '@inertiajs/react';
 
 const CenteredCarousel = () => {
     const games = [
-        { name: 'Minesweeper', image: 'images/Image Vector.png', link: 'minesweeper' },
+        { name: 'Minesweeper', image: '/images/Minesweeper.png', link: 'minesweeper' },
         { name: 'Chess', image: 'images/Chessboard.png', link: 'https://www.chess.com/' },
-        { name: 'KATLA', image: 'images/Image Vector.png' },
-        { name: '8 Queens Challenge', image: 'images/Image Vector.png' },
-        { name: 'Sudoku', image: 'images/Image Vector.png' },
+        { name: 'KATLA', image: '/images/Katla.png' },
+        { name: '8 Queens Challenge', image: '/images/8_Queens.png' },
+        { name: 'Sudoku', image: '/images/Sudoku.png' },
         { name: 'Memory Game', image: 'images/Image Vector.png' }
     ];
 
