@@ -7,9 +7,9 @@ import * as THREE from 'three';
 
 const color = "#bea33b";
 
-const Icosahedron = () => (
+const Sphere = () => (
   <mesh rotation-x={0.35}>
-    <icosahedronGeometry args={[1, 0]} />
+    <sphereGeometry args={[1, 32, 32]} />
     <meshBasicMaterial wireframe color={color} />
   </mesh>
 );
@@ -66,7 +66,7 @@ export default function Scene({ numStars = 100 }) {
 
   return (
     <>
-      <Icosahedron />
+      <Sphere />
       {stars}
     </>
   );
